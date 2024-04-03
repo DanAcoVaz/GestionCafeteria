@@ -23,6 +23,11 @@ def nuevaBebida(s):
 
     #contamos cuantas , hay en el string
     commaCount = s.count(',')
+
+    #Checamos que haya hasta un maximo de 5 tamaños
+    if(commaCount > 5):
+        return(False)
+    
     #Variable para saber cual fue el ultimo size ingresado (para saber que se agregue en orden ascendente)
     lastSize = 0
     #Creamos un index para saber en donde estamos en el string
@@ -47,7 +52,10 @@ def nuevaBebida(s):
             #Checamos si este nuevo valor es mayor que el anterior
             if(number < lastSize):
                 return(False)
+            #Actualizamos el ultimo size agregado
             lastSize = number
+            #Actualizamos el index
             index = s.find(',', index + 1)
     
+    #Si llegamos aqui, es valida la entrada
     return(True)
