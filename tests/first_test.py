@@ -16,8 +16,13 @@ def testInputs():
     assert nuevaBebida("Coca") == False
     #El input acaba en ,
     assert nuevaBebida("Pepsi, 5, 7, 10, 12,") == False
+    #El se separan el nombre y tamaños por mas de una coma o sin coma
+    assert nuevaBebida("Pepsi,,, 5,, 8,, 14") == False
+    assert nuevaBebida("Pepsi, 2 3, 5/7") == False
     #Input correcto con muchos espacios (para probar que los espacios se ignoran)
     assert nuevaBebida("    Manzanita Sol,   3,    6,    12") == True
+    #Input correcto sin espacios
+    assert nuevaBebida("SinEspacios,3,6,9,12,15") == True
     #Input correcto
     assert nuevaBebida("Pepsi, 10, 20, 30") == True
 
