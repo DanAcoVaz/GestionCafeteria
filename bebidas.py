@@ -42,6 +42,10 @@ def nuevaBebida(s):
     for i in range(commaCount):
         #Checamos si este es el ultimo tamaño
         if(commaCount == (i + 1)):
+            #Checamos si el numero es entero
+            if(s[index + 1:].isdigit() != True):
+                return(False)
+            
             number = int(s[index + 1:])
             #Checamos si el tamaño esta dentro del rango
             if(number < 1 or number > 48):
@@ -50,6 +54,10 @@ def nuevaBebida(s):
             if(number < lastSize):
                 return(False)
         else:
+            #Checamos si el numero es entero
+            if(s[index + 1: s.find(',', index + 1)].isdigit() != True):
+                return(False)
+            
             number = int(s[index + 1: s.find(',', index + 1)])
             #Checamos si el tamaño esta dentro del rango
             if(number < 1 or number > 48):
