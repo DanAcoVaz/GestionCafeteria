@@ -33,3 +33,9 @@ def testNames():
     assert nuevaBebida("Powerful Beverage, 10, 20, 30") == False
     #Nombre de 15 caracteres
     assert nuevaBebida("Powerful Elixirs, 10, 15, 20, 25, 30") == True
+    #Nombre con caracteres alfanumericos
+    assert nuevaBebida("4 Loko, 4, 8, 12, 16, 20") == False
+    #Nombre con caracteres numericos
+    assert nuevaBebida("24, 2, 6, 9, 13") == False
+    #Nombre con caracteres alfabeticos
+    assert nuevaBebida("Four Loko, 4, 8, 12, 16, 20") == True
